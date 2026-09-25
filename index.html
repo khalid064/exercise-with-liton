@@ -718,6 +718,168 @@ section{
 }
 
 
+/* ================= OWNER ================= */
+
+.owner-section{
+
+    background:var(--bg);
+
+}
+
+.owner-card{
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    box-shadow:
+    0 15px 45px
+    var(--shadow);
+
+    transition:.35s;
+
+}
+
+.owner-card:hover{
+
+    transform:
+    translateY(-6px);
+
+    border-color:
+    var(--accent);
+
+}
+
+
+/* OWNER PHOTO PLACEHOLDER */
+
+.owner-photo{
+
+    width:180px;
+    height:180px;
+
+    min-width:180px;
+
+    border-radius:50%;
+
+    border:
+    4px solid var(--accent);
+
+    background:var(--card2);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    overflow:hidden;
+
+}
+
+.owner-photo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.owner-photo-placeholder{
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+
+/* OWNER INFO */
+
+.owner-info{
+
+    flex:1;
+
+}
+
+.owner-info h3{
+
+    font-size:36px;
+
+    margin-bottom:8px;
+
+}
+
+.owner-role{
+
+    color:var(--accent);
+
+    font-weight:900;
+
+    margin-bottom:18px;
+
+}
+
+.owner-info p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:22px;
+
+}
+
+.owner-facebook-btn{
+
+    display:inline-block;
+
+    background:#1877f2;
+
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:9px;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    transition:.3s;
+
+}
+
+.owner-facebook-btn:hover{
+
+    background:#0d65d9;
+
+    transform:
+    scale(1.04);
+
+}
+
+
 /* ================= FACEBOOK PAGE ================= */
 
 .social-card{
@@ -1025,6 +1187,43 @@ footer p{
 
     }
 
+
+    /* OWNER MOBILE */
+
+    .owner-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:35px 25px;
+
+    }
+
+    .owner-photo{
+
+        width:160px;
+        height:160px;
+
+        min-width:160px;
+
+    }
+
+    .owner-info h3{
+
+        font-size:30px;
+
+    }
+
+    .owner-facebook-btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+
     footer{
 
         flex-direction:column;
@@ -1064,6 +1263,8 @@ footer p{
         <a href="#tips">Tips</a>
 
         <a href="#about">About</a>
+
+        <a href="#owner">Owner</a>
 
     </nav>
 
@@ -1471,6 +1672,106 @@ footer p{
         উৎসাহিত করা।
 
     </p>
+
+</section>
+
+
+
+<!-- ================= OWNER ================= -->
+
+<section
+    class="owner-section"
+    id="owner"
+>
+
+    <div class="section-tag">
+        ABOUT THE OWNER
+    </div>
+
+
+    <h2 class="section-title">
+        Meet The Owner.
+    </h2>
+
+
+    <div class="owner-card">
+
+
+        <!--
+        =====================================
+        OWNER PHOTO AREA
+
+        পরে ছবি দিতে চাইলে:
+
+        1. ছবির নাম owner.jpg রাখবে
+        2. owner.jpg এবং index.html একই folder-এ রাখবে
+        3. নিচের placeholder-এর জায়গায়:
+
+        <img src="owner.jpg" alt="Md. Liton">
+
+        বসাবে।
+        =====================================
+        -->
+
+        <div class="owner-photo">
+
+            <div class="owner-photo-placeholder">
+
+                🖼️
+
+                <br>
+
+                Owner Photo
+
+                <br>
+
+                Coming Soon
+
+            </div>
+
+        </div>
+
+
+        <div class="owner-info">
+
+            <h3>
+                Md. Liton
+            </h3>
+
+
+            <div class="owner-role">
+
+                Founder & Owner — Exercise With Liton
+
+            </div>
+
+
+            <p>
+
+                Exercise With Liton-এর Founder & Owner
+                হলেন Md. Liton। Fitness, exercise এবং
+                healthy lifestyle সম্পর্কিত content
+                তৈরি ও শেয়ার করার উদ্দেশ্যে এই
+                platform পরিচালিত হচ্ছে।
+
+            </p>
+
+
+            <a
+                href="https://www.facebook.com/share/1QP3JzXGkj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="owner-facebook-btn"
+            >
+
+                Visit Owner's Facebook →
+
+            </a>
+
+        </div>
+
+
+    </div>
 
 </section>
 
