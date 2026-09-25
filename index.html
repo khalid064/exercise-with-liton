@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Exercise With Liton | Fitness & Workout</title>
+
+<style>
+
+/* ================= BASIC ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --bg:#070a08;
+    --header:#0c100e;
+    --card:#111613;
+    --card2:#141a16;
+    --text:#ffffff;
+    --muted:#aaaaaa;
+    --border:#252b27;
+    --accent:#baff00;
+    --shadow:rgba(0,0,0,.4);
+
+}
+
+body.light{
+
+    --bg:#f5f7f3;
+    --header:#ffffff;
+    --card:#ffffff;
+    --card2:#eef2ec;
+    --text:#101411;
+    --muted:#5e665f;
+    --border:#dce2dc;
+    --accent:#6aa900;
+    --shadow:rgba(0,0,0,.12);
+
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+
+    transition:
+    background .35s ease,
+    color .35s ease;
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+header{
+
+    position:sticky;
+    top:0;
+
+    z-index:999;
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    background:var(--header);
+
+    border-bottom:
+    1px solid var(--border);
+
+    transition:.35s;
+
+}
+
+.logo{
+
+    font-size:21px;
+    font-weight:900;
+
+}
+
+.logo span{
+
+    color:var(--accent);
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:28px;
+
+}
+
+nav a{
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:var(--accent);
+
+}
+
+
+/* ================= THEME BUTTON ================= */
+
+.theme-btn{
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:
+    1px solid var(--border);
+
+    background:var(--card);
+
+    color:var(--text);
+
+    font-size:21px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s;
+
+}
+
+.theme-btn:hover{
+
+    transform:
+    rotate(20deg)
+    scale(1.08);
+
+    border-color:
+    var(--accent);
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:80px 8%;
+
+    background:
+
+    radial-gradient(
+        circle at 85% 45%,
+        rgba(48,77,13,.55),
+        transparent 35%
+    );
+
+}
+
+.hero-content{
+
+    max-width:800px;
+
+}
+
+.tag{
+
+    color:var(--accent);
+
+    font-weight:900;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+}
+
+.hero h1{
+
+    font-size:
+    clamp(55px,9vw,105px);
+
+    line-height:.9;
+
+    letter-spacing:-5px;
+
+    margin:20px 0;
+
+}
+
+.hero h1 span{
+
+    color:var(--accent);
+
+}
+
+.hero-text{
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:680px;
+
+}
+
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+
+    margin-top:32px;
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 23px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    transition:.25s;
+
+}
+
+.primary{
+
+    background:
+    var(--accent);
+
+    color:#081000;
+
+}
+
+.primary:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 10px 30px
+    rgba(186,255,0,.25);
+
+}
+
+.secondary{
+
+    border:
+    1px solid var(--border);
+
+    color:var(--text);
+
+}
+
+.secondary:hover{
+
+    border-color:
+    var(--accent);
+
+    color:var(--accent);
+
+}
+
+
+/* ================= SECTION ================= */
+
+section{
+
+    padding:95px 8%;
+
+}
+
+.section-tag{
+
+    color:var(--accent);
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+}
+
+.section-title{
+
+    font-size:52px;
+
+    margin-top:10px;
+
+    margin-bottom:45px;
+
+}
+
+
+/* ================= WORKOUT CARDS ================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:32px;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 30px
+    var(--shadow);
+
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px);
+
+    border-color:
+    var(--accent);
+
+}
+
+.icon{
+
+    font-size:45px;
+
+    margin-bottom:25px;
+
+}
+
+.card h3{
+
+    font-size:27px;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+
+/* ================= FACEBOOK VIDEOS ================= */
+
+.video-section{
+
+    background:var(--card2);
+
+}
+
+.video-intro{
+
+    max-width:700px;
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    margin-top:-25px;
+
+    margin-bottom:40px;
+
+}
+
+.video-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:22px;
+
+}
+
+.video-card{
+
+    position:relative;
+
+    min-height:270px;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #172019,
+        #0b0f0d
+    );
+
+    border:
+    1px solid var(--border);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.video-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+    var(--accent);
+
+    opacity:.08;
+
+    top:-80px;
+    right:-60px;
+
+}
+
+.video-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    border-color:
+    var(--accent);
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.3);
+
+}
+
+.play-button{
+
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    background:#1877f2;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+
+    padding-left:5px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(24,119,242,.35);
+
+    margin-bottom:22px;
+
+    transition:.3s;
+
+}
+
+.video-card:hover
+.play-button{
+
+    transform:
+    scale(1.12);
+
+}
+
+.video-card h3{
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+}
+
+.video-card p{
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+
+/* ================= FITNESS BIO ================= */
+
+.bio-section{
+
+    background:var(--bg);
+
+}
+
+.bio-card{
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    box-shadow:
+    0 15px 45px
+    var(--shadow);
+
+    text-align:center;
+
+}
+
+.bio-icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+.bio-text{
+
+    font-size:
+    clamp(20px,3vw,30px);
+
+    font-weight:700;
+
+    line-height:1.7;
+
+}
+
+.bio-text .green{
+
+    color:var(--accent);
+
+}
+
+.bio-sub{
+
+    margin-top:18px;
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+
+/* ================= TIPS ================= */
+
+.tips{
+
+    background:var(--card2);
+
+}
+
+.tip-box{
+
+    max-width:850px;
+
+    padding:50px;
+
+    border-radius:22px;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    box-shadow:
+    0 15px 40px
+    var(--shadow);
+
+}
+
+.tip-box h2{
+
+    font-size:45px;
+
+    margin:15px 0;
+
+}
+
+.tip-box p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.about h2{
+
+    font-size:50px;
+
+}
+
+.about p{
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+/* ================= FACEBOOK PAGE ================= */
+
+.social-card{
+
+    max-width:900px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    transition:.35s;
+
+    box-shadow:
+    0 15px 40px
+    var(--shadow);
+
+}
+
+.social-card:hover{
+
+    transform:
+    translateY(-6px);
+
+    border-color:#1877f2;
+
+}
+
+.social-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+.facebook-icon{
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:#1877f2;
+
+    color:white;
+
+    font-size:40px;
+
+    font-weight:bold;
+
+}
+
+.social-info h3{
+
+    font-size:27px;
+
+    margin-bottom:5px;
+
+}
+
+.social-info p{
+
+    color:var(--muted);
+
+}
+
+.facebook-btn{
+
+    background:#1877f2;
+
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:9px;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    transition:.3s;
+
+}
+
+.facebook-btn:hover{
+
+    background:#0d65d9;
+
+    transform:
+    scale(1.04);
+
+}
+
+
+/* ================= CTA ================= */
+
+.cta{
+
+    margin:
+    20px 8% 90px;
+
+    padding:
+    70px 8%;
+
+    border-radius:25px;
+
+    background:
+    var(--accent);
+
+    color:#071000;
+
+}
+
+.cta .section-tag{
+
+    color:#071000;
+
+}
+
+.cta h2{
+
+    font-size:55px;
+
+    margin:
+    15px 0 28px;
+
+}
+
+.cta-btn{
+
+    background:#071000;
+
+    color:var(--accent);
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    padding:45px 8%;
+
+    border-top:
+    1px solid var(--border);
+
+    background:var(--header);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+footer strong{
+
+    font-size:20px;
+
+}
+
+footer p{
+
+    color:var(--muted);
+
+    margin-top:7px;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:750px){
+
+    header{
+
+        padding:
+        0 5%;
+
+    }
+
+    nav{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        padding:
+        70px 6%;
+
+    }
+
+    section{
+
+        padding:
+        70px 6%;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .video-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .section-title{
+
+        font-size:38px;
+
+    }
+
+    .about{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .about h2{
+
+        font-size:40px;
+
+    }
+
+    .tip-box{
+
+        padding:
+        35px 25px;
+
+    }
+
+    .tip-box h2{
+
+        font-size:35px;
+
+    }
+
+    .social-card{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        padding:28px;
+
+    }
+
+    .facebook-btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .cta{
+
+        margin:
+        10px 6% 60px;
+
+        padding:
+        50px 28px;
+
+    }
+
+    .cta h2{
+
+        font-size:40px;
+
+    }
+
+    footer{
+
+        flex-direction:column;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <div class="logo">
+
+        <span>EXERCISE</span>
+        WITH LITON
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#workouts">Workouts</a>
+
+        <a href="#videos">Videos</a>
+
+        <a href="#tips">Tips</a>
+
+        <a href="#about">About</a>
+
+    </nav>
+
+
+    <button
+        class="theme-btn"
+        id="themeButton"
+        title="Dark / Light Mode"
+    >
+
+        🌙
+
+    </button>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <div class="tag">
+            MOVE • TRAIN • GROW
+        </div>
+
+
+        <h1>
+
+            Build a<br>
+
+            <span>Stronger</span> You.
+
+        </h1>
+
+
+        <p class="hero-text">
+
+            💪 সুস্থ থাকুন, ফিট থাকুন।
+
+            <br><br>
+
+            প্রতিদিনের এক্সারসাইজ,
+            ডায়েট টিপস এবং সঠিক গাইডের
+            জন্য ফলো করুন।
+
+            <br><br>
+
+            🚀 Let's get fit together with Liton!
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#videos"
+                class="btn primary"
+            >
+                Watch Videos →
+            </a>
+
+
+            <a
+                href="#facebook"
+                class="btn secondary"
+            >
+                Follow Facebook
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WORKOUTS ================= -->
+
+<section id="workouts">
+
+    <div class="section-tag">
+        WORKOUT LIBRARY
+    </div>
+
+
+    <h2 class="section-title">
+        Train With Purpose.
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">
+                💪
+            </div>
+
+            <h3>
+                Strength
+            </h3>
+
+            <p>
+
+                Bodyweight exercises এবং
+                simple movements-এর মাধ্যমে
+                strength training-এর ধারণা
+                শিখুন।
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                🏃
+            </div>
+
+            <h3>
+                Cardio
+            </h3>
+
+            <p>
+
+                Active movement এবং cardio
+                workout-এর মাধ্যমে endurance
+                বাড়ানোর চেষ্টা করুন।
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                🧘
+            </div>
+
+            <h3>
+                Mobility
+            </h3>
+
+            <p>
+
+                Flexibility এবং mobility
+                উন্নত করার জন্য নিয়মিত
+                movement practice করুন।
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FACEBOOK VIDEOS ================= -->
+
+<section
+    class="video-section"
+    id="videos"
+>
+
+    <div class="section-tag">
+        LATEST VIDEOS
+    </div>
+
+
+    <h2 class="section-title">
+        Watch Our Videos.
+    </h2>
+
+
+    <p class="video-intro">
+
+        Exercise With Liton-এর Facebook
+        videos দেখুন। যেকোনো video card-এ
+        click করলে সরাসরি Facebook-এ গিয়ে
+        video দেখতে পারবেন।
+
+    </p>
+
+
+    <div class="video-grid">
+
+
+        <!-- VIDEO 1 -->
+
+        <a
+            class="video-card"
+            href="https://www.facebook.com/share/v/1Ejygj7hZt/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="play-button">
+                ▶
+            </div>
+
+            <h3>
+                Workout Video 01
+            </h3>
+
+            <p>
+                Watch on Facebook →
+            </p>
+
+        </a>
+
+
+
+        <!-- VIDEO 2 -->
+
+        <a
+            class="video-card"
+            href="https://www.facebook.com/share/v/16CjEpHwTet/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="play-button">
+                ▶
+            </div>
+
+            <h3>
+                Workout Video 02
+            </h3>
+
+            <p>
+                Watch on Facebook →
+            </p>
+
+        </a>
+
+
+
+        <!-- VIDEO 3 -->
+
+        <a
+            class="video-card"
+            href="https://www.facebook.com/share/v/1RPnPqwrxM/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="play-button">
+                ▶
+            </div>
+
+            <h3>
+                Workout Video 03
+            </h3>
+
+            <p>
+                Watch on Facebook →
+            </p>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BIO ================= -->
+
+<section class="bio-section">
+
+    <div class="bio-card">
+
+        <div class="bio-icon">
+            💪
+        </div>
+
+
+        <div class="bio-text">
+
+            সুস্থ থাকুন, ফিট থাকুন।
+
+            <br>
+
+            প্রতিদিনের এক্সারসাইজ,
+            ডায়েট টিপস এবং সঠিক গাইডের
+            জন্য ফলো করুন।
+
+            <br>
+
+            <span class="green">
+                🚀 Let's get fit together with Liton!
+            </span>
+
+        </div>
+
+
+        <p class="bio-sub">
+
+            Stay active • Stay healthy •
+            Keep improving
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TIPS ================= -->
+
+<section
+    class="tips"
+    id="tips"
+>
+
+    <div class="tip-box">
+
+        <div class="section-tag">
+            FITNESS TIP
+        </div>
+
+
+        <h2>
+            Consistency Beats Perfection.
+        </h2>
+
+
+        <p>
+
+            একটি realistic routine দিয়ে
+            শুরু করুন। Exercise করার সময়
+            সঠিক technique-এর দিকে মনোযোগ
+            দিন এবং প্রয়োজন অনুযায়ী rest নিন।
+
+        </p>
+
+
+        <a
+            href="#videos"
+            class="btn primary"
+        >
+            Watch Workouts →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    class="about"
+    id="about"
+>
+
+    <div>
+
+        <div class="section-tag">
+            ABOUT
+        </div>
+
+
+        <h2>
+
+            Welcome to<br>
+
+            Exercise With Liton.
+
+        </h2>
+
+    </div>
+
+
+    <p>
+
+        Exercise With Liton হলো একটি
+        fitness-focused platform যেখানে
+        exercise ideas, fitness tips,
+        workout videos এবং motivation
+        পাওয়া যাবে।
+
+        <br><br>
+
+        আমাদের লক্ষ্য হলো সহজভাবে
+        মানুষকে নিয়মিত active থাকতে
+        উৎসাহিত করা।
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= FACEBOOK PAGE ================= -->
+
+<section id="facebook">
+
+    <div class="section-tag">
+        FOLLOW US
+    </div>
+
+
+    <h2 class="section-title">
+        Join Our Facebook Community.
+    </h2>
+
+
+    <div class="social-card">
+
+
+        <div class="social-left">
+
+            <div class="facebook-icon">
+                f
+            </div>
+
+
+            <div class="social-info">
+
+                <h3>
+                    Exercise With Liton
+                </h3>
+
+
+                <p>
+
+                    New fitness videos,
+                    exercises, tips and updates
+                    পেতে আমাদের Facebook page
+                    follow করুন।
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://www.facebook.com/share/19T71gVA5b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="facebook-btn"
+        >
+
+            Visit Facebook →
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<div class="cta">
+
+    <div class="section-tag">
+        READY?
+    </div>
+
+
+    <h2>
+        Make Today An Active Day.
+    </h2>
+
+
+    <a
+        href="#videos"
+        class="btn cta-btn"
+    >
+        Watch Videos →
+    </a>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+
+    <div>
+
+        <strong>
+            EXERCISE WITH LITON
+        </strong>
+
+
+        <p>
+            💪 Move better. Feel stronger.
+        </p>
+
+    </div>
+
+
+    <p>
+
+        © 2026 Exercise With Liton.
+        All rights reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* ================= DARK / LIGHT MODE ================= */
+
+const themeButton =
+    document.getElementById(
+        "themeButton"
+    );
+
+
+/* Load saved theme */
+
+const savedTheme =
+    localStorage.getItem(
+        "exerciseTheme"
+    );
+
+
+if(savedTheme === "light"){
+
+    document.body.classList.add(
+        "light"
+    );
+
+    themeButton.textContent =
+        "☀️";
+
+}
+
+
+/* Toggle */
+
+themeButton.addEventListener(
+    "click",
+    function(){
+
+        document.body.classList.toggle(
+            "light"
+        );
+
+
+        if(
+            document.body.classList.contains(
+                "light"
+            )
+        ){
+
+            themeButton.textContent =
+                "☀️";
+
+            localStorage.setItem(
+                "exerciseTheme",
+                "light"
+            );
+
+        }
+
+        else{
+
+            themeButton.textContent =
+                "🌙";
+
+            localStorage.setItem(
+                "exerciseTheme",
+                "dark"
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
