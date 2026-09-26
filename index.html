@@ -2,1978 +2,1998 @@
 <html lang="bn">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Exercise With Liton | Fitness & Workout</title>
+    <style>
+        /* ================= BASIC ================= */
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<title>Exercise With Liton | Fitness & Workout</title>
+        :root {
 
-<style>
+            --bg: #070a08;
+            --header: #0c100e;
+            --card: #111613;
+            --card2: #141a16;
+            --text: #ffffff;
+            --muted: #aaaaaa;
+            --border: #252b27;
+            --accent: #baff00;
+            --shadow: rgba(0, 0, 0, .4);
 
-/* ================= BASIC ================= */
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
-    scroll-behavior:smooth;
-}
+        body.light {
 
-:root{
+            --bg: #f5f7f3;
+            --header: #ffffff;
+            --card: #ffffff;
+            --card2: #eef2ec;
+            --text: #101411;
+            --muted: #5e665f;
+            --border: #dce2dc;
+            --accent: #6aa900;
+            --shadow: rgba(0, 0, 0, .12);
 
-    --bg:#070a08;
-    --header:#0c100e;
-    --card:#111613;
-    --card2:#141a16;
-    --text:#ffffff;
-    --muted:#aaaaaa;
-    --border:#252b27;
-    --accent:#baff00;
-    --shadow:rgba(0,0,0,.4);
+        }
 
-}
+        body {
 
-body.light{
+            background: var(--bg);
+            color: var(--text);
 
-    --bg:#f5f7f3;
-    --header:#ffffff;
-    --card:#ffffff;
-    --card2:#eef2ec;
-    --text:#101411;
-    --muted:#5e665f;
-    --border:#dce2dc;
-    --accent:#6aa900;
-    --shadow:rgba(0,0,0,.12);
+            transition:
+                background .35s ease,
+                color .35s ease;
 
-}
+        }
 
-body{
 
-    background:var(--bg);
-    color:var(--text);
+        /* ================= NAVBAR ================= */
 
-    transition:
-    background .35s ease,
-    color .35s ease;
+        header {
 
-}
+            position: sticky;
+            top: 0;
 
+            z-index: 999;
 
-/* ================= NAVBAR ================= */
+            height: 75px;
 
-header{
+            display: flex;
 
-    position:sticky;
-    top:0;
+            align-items: center;
 
-    z-index:999;
+            justify-content: space-between;
 
-    height:75px;
+            padding: 0 7%;
 
-    display:flex;
+            background: var(--header);
 
-    align-items:center;
+            border-bottom:
+                1px solid var(--border);
 
-    justify-content:space-between;
+            transition: .35s;
 
-    padding:0 7%;
+        }
 
-    background:var(--header);
+        .logo {
 
-    border-bottom:
-    1px solid var(--border);
+            font-size: 21px;
+            font-weight: 900;
 
-    transition:.35s;
+        }
 
-}
+        .logo span {
 
-.logo{
+            color: var(--accent);
 
-    font-size:21px;
-    font-weight:900;
+        }
 
-}
+        nav {
 
-.logo span{
+            display: flex;
 
-    color:var(--accent);
+            gap: 28px;
 
-}
+        }
 
-nav{
+        nav a {
 
-    display:flex;
+            color: var(--text);
 
-    gap:28px;
+            text-decoration: none;
 
-}
+            font-weight: bold;
 
-nav a{
+            transition: .3s;
 
-    color:var(--text);
+        }
 
-    text-decoration:none;
+        nav a:hover {
 
-    font-weight:bold;
+            color: var(--accent);
 
-    transition:.3s;
+        }
 
-}
 
-nav a:hover{
+        /* ================= THEME BUTTON ================= */
 
-    color:var(--accent);
+        .theme-btn {
 
-}
+            width: 48px;
+            height: 48px;
 
+            border-radius: 50%;
 
-/* ================= THEME BUTTON ================= */
+            border:
+                1px solid var(--border);
 
-.theme-btn{
+            background: var(--card);
 
-    width:48px;
-    height:48px;
+            color: var(--text);
 
-    border-radius:50%;
+            font-size: 21px;
 
-    border:
-    1px solid var(--border);
+            cursor: pointer;
 
-    background:var(--card);
+            display: flex;
 
-    color:var(--text);
+            align-items: center;
 
-    font-size:21px;
+            justify-content: center;
 
-    cursor:pointer;
+            transition: .3s;
 
-    display:flex;
+        }
 
-    align-items:center;
+        .theme-btn:hover {
 
-    justify-content:center;
+            transform:
+                rotate(20deg) scale(1.08);
 
-    transition:.3s;
+            border-color:
+                var(--accent);
 
-}
+        }
 
-.theme-btn:hover{
 
-    transform:
-    rotate(20deg)
-    scale(1.08);
+        /* ================= HERO ================= */
 
-    border-color:
-    var(--accent);
+        .hero {
 
-}
+            min-height: 90vh;
 
+            display: flex;
 
-/* ================= HERO ================= */
+            align-items: center;
 
-.hero{
+            padding: 80px 8%;
 
-    min-height:90vh;
+            background:
 
-    display:flex;
+                radial-gradient(circle at 85% 45%,
+                    rgba(48, 77, 13, .55),
+                    transparent 35%);
 
-    align-items:center;
+        }
 
-    padding:80px 8%;
+        .hero-content {
 
-    background:
+            max-width: 800px;
 
-    radial-gradient(
-        circle at 85% 45%,
-        rgba(48,77,13,.55),
-        transparent 35%
-    );
+        }
 
-}
+        .tag {
 
-.hero-content{
+            color: var(--accent);
 
-    max-width:800px;
+            font-weight: 900;
 
-}
+            letter-spacing: 4px;
 
-.tag{
+            font-size: 13px;
 
-    color:var(--accent);
+        }
 
-    font-weight:900;
+        .hero h1 {
 
-    letter-spacing:4px;
+            font-size:
+                clamp(55px, 9vw, 105px);
 
-    font-size:13px;
+            line-height: .9;
 
-}
+            letter-spacing: -5px;
 
-.hero h1{
+            margin: 20px 0;
 
-    font-size:
-    clamp(55px,9vw,105px);
+        }
 
-    line-height:.9;
+        .hero h1 span {
 
-    letter-spacing:-5px;
+            color: var(--accent);
 
-    margin:20px 0;
+        }
 
-}
+        .hero-text {
 
-.hero h1 span{
+            color: var(--muted);
 
-    color:var(--accent);
+            font-size: 18px;
 
-}
+            line-height: 1.8;
 
-.hero-text{
+            max-width: 680px;
 
-    color:var(--muted);
+        }
 
-    font-size:18px;
 
-    line-height:1.8;
+        /* ================= BUTTONS ================= */
 
-    max-width:680px;
+        .buttons {
 
-}
+            margin-top: 32px;
 
+            display: flex;
 
-/* ================= BUTTONS ================= */
+            gap: 12px;
 
-.buttons{
+            flex-wrap: wrap;
 
-    margin-top:32px;
+        }
 
-    display:flex;
+        .btn {
 
-    gap:12px;
+            display: inline-block;
 
-    flex-wrap:wrap;
+            padding: 14px 23px;
 
-}
+            border-radius: 8px;
 
-.btn{
+            text-decoration: none;
 
-    display:inline-block;
+            font-weight: 900;
 
-    padding:14px 23px;
+            transition: .25s;
 
-    border-radius:8px;
+        }
 
-    text-decoration:none;
+        .primary {
 
-    font-weight:900;
+            background:
+                var(--accent);
 
-    transition:.25s;
+            color: #081000;
 
-}
+        }
 
-.primary{
+        .primary:hover {
 
-    background:
-    var(--accent);
+            transform:
+                translateY(-3px);
 
-    color:#081000;
+            box-shadow:
+                0 10px 30px rgba(186, 255, 0, .25);
 
-}
+        }
 
-.primary:hover{
+        .secondary {
 
-    transform:
-    translateY(-3px);
+            border:
+                1px solid var(--border);
 
-    box-shadow:
-    0 10px 30px
-    rgba(186,255,0,.25);
+            color: var(--text);
 
-}
+        }
 
-.secondary{
+        .secondary:hover {
 
-    border:
-    1px solid var(--border);
+            border-color:
+                var(--accent);
 
-    color:var(--text);
+            color: var(--accent);
 
-}
+        }
 
-.secondary:hover{
 
-    border-color:
-    var(--accent);
+        /* ================= SECTION ================= */
 
-    color:var(--accent);
+        section {
 
-}
+            padding: 95px 8%;
 
+        }
 
-/* ================= SECTION ================= */
+        .section-tag {
 
-section{
+            color: var(--accent);
 
-    padding:95px 8%;
+            font-weight: 900;
 
-}
+            letter-spacing: 3px;
 
-.section-tag{
+            font-size: 12px;
 
-    color:var(--accent);
+        }
 
-    font-weight:900;
+        .section-title {
 
-    letter-spacing:3px;
+            font-size: 52px;
 
-    font-size:12px;
+            margin-top: 10px;
 
-}
+            margin-bottom: 45px;
 
-.section-title{
+        }
 
-    font-size:52px;
 
-    margin-top:10px;
+        /* ================= WORKOUT CARDS ================= */
 
-    margin-bottom:45px;
+        .cards {
 
-}
+            display: grid;
 
+            grid-template-columns:
+                repeat(3, 1fr);
 
-/* ================= WORKOUT CARDS ================= */
+            gap: 20px;
 
-.cards{
+        }
 
-    display:grid;
+        .card {
 
-    grid-template-columns:
-    repeat(3,1fr);
+            background: var(--card);
 
-    gap:20px;
+            border:
+                1px solid var(--border);
 
-}
+            border-radius: 20px;
 
-.card{
+            padding: 32px;
 
-    background:var(--card);
+            transition: .3s;
 
-    border:
-    1px solid var(--border);
+            box-shadow:
+                0 10px 30px var(--shadow);
 
-    border-radius:20px;
+        }
 
-    padding:32px;
+        .card:hover {
 
-    transition:.3s;
+            transform:
+                translateY(-8px);
 
-    box-shadow:
-    0 10px 30px
-    var(--shadow);
+            border-color:
+                var(--accent);
 
-}
+        }
 
-.card:hover{
+        .icon {
 
-    transform:
-    translateY(-8px);
+            font-size: 45px;
 
-    border-color:
-    var(--accent);
+            margin-bottom: 25px;
 
-}
+        }
 
-.icon{
+        .card h3 {
 
-    font-size:45px;
+            font-size: 27px;
 
-    margin-bottom:25px;
+            margin-bottom: 10px;
 
-}
+        }
 
-.card h3{
+        .card p {
 
-    font-size:27px;
+            color: var(--muted);
 
-    margin-bottom:10px;
+            line-height: 1.7;
 
-}
+        }
 
-.card p{
 
-    color:var(--muted);
+        /* ================= FACEBOOK VIDEOS ================= */
 
-    line-height:1.7;
+        .video-section {
 
-}
+            background: var(--card2);
 
+        }
 
-/* ================= FACEBOOK VIDEOS ================= */
+        .video-intro {
 
-.video-section{
+            max-width: 700px;
 
-    background:var(--card2);
+            color: var(--muted);
 
-}
+            line-height: 1.7;
 
-.video-intro{
+            margin-top: -25px;
 
-    max-width:700px;
+            margin-bottom: 40px;
 
-    color:var(--muted);
+        }
 
-    line-height:1.7;
+        .video-grid {
 
-    margin-top:-25px;
+            display: grid;
 
-    margin-bottom:40px;
+            grid-template-columns:
+                repeat(3, 1fr);
 
-}
+            gap: 22px;
 
-.video-grid{
+        }
 
-    display:grid;
+        .video-card {
 
-    grid-template-columns:
-    repeat(3,1fr);
+            position: relative;
 
-    gap:22px;
+            min-height: 270px;
 
-}
+            overflow: hidden;
 
-.video-card{
+            border-radius: 22px;
 
-    position:relative;
+            background:
 
-    min-height:270px;
+                linear-gradient(145deg,
+                    #172019,
+                    #0b0f0d);
 
-    overflow:hidden;
+            border:
+                1px solid var(--border);
 
-    border-radius:22px;
+            display: flex;
 
-    background:
+            flex-direction: column;
 
-    linear-gradient(
-        145deg,
-        #172019,
-        #0b0f0d
-    );
+            align-items: center;
 
-    border:
-    1px solid var(--border);
+            justify-content: center;
 
-    display:flex;
+            text-align: center;
 
-    flex-direction:column;
+            padding: 30px;
 
-    align-items:center;
+            text-decoration: none;
 
-    justify-content:center;
+            color: white;
 
-    text-align:center;
+            transition: .35s;
 
-    padding:30px;
+        }
 
-    text-decoration:none;
+        .video-card::before {
 
-    color:white;
+            content: "";
 
-    transition:.35s;
+            position: absolute;
 
-}
+            width: 220px;
+            height: 220px;
 
-.video-card::before{
+            border-radius: 50%;
 
-    content:"";
+            background:
+                var(--accent);
 
-    position:absolute;
+            opacity: .08;
 
-    width:220px;
-    height:220px;
+            top: -80px;
+            right: -60px;
 
-    border-radius:50%;
+        }
 
-    background:
-    var(--accent);
+        .video-card:hover {
 
-    opacity:.08;
+            transform:
+                translateY(-8px);
 
-    top:-80px;
-    right:-60px;
+            border-color:
+                var(--accent);
 
-}
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, .3);
 
-.video-card:hover{
+        }
 
-    transform:
-    translateY(-8px);
+        .play-button {
 
-    border-color:
-    var(--accent);
+            width: 75px;
+            height: 75px;
 
-    box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.3);
+            border-radius: 50%;
 
-}
+            background: #1877f2;
 
-.play-button{
+            display: flex;
 
-    width:75px;
-    height:75px;
+            align-items: center;
+            justify-content: center;
 
-    border-radius:50%;
+            font-size: 30px;
 
-    background:#1877f2;
+            padding-left: 5px;
 
-    display:flex;
+            box-shadow:
+                0 10px 30px rgba(24, 119, 242, .35);
 
-    align-items:center;
-    justify-content:center;
+            margin-bottom: 22px;
 
-    font-size:30px;
+            transition: .3s;
 
-    padding-left:5px;
+        }
 
-    box-shadow:
-    0 10px 30px
-    rgba(24,119,242,.35);
+        .video-card:hover .play-button {
 
-    margin-bottom:22px;
+            transform:
+                scale(1.12);
 
-    transition:.3s;
+        }
 
-}
+        .video-card h3 {
 
-.video-card:hover
-.play-button{
+            font-size: 22px;
 
-    transform:
-    scale(1.12);
+            margin-bottom: 8px;
 
-}
+        }
 
-.video-card h3{
+        .video-card p {
 
-    font-size:22px;
+            color: #aaa;
 
-    margin-bottom:8px;
+            font-size: 14px;
 
-}
+        }
 
-.video-card p{
 
-    color:#aaa;
+        /* ================= FITNESS BIO ================= */
 
-    font-size:14px;
+        .bio-section {
 
-}
+            background: var(--bg);
 
+        }
 
-/* ================= FITNESS BIO ================= */
+        .bio-card {
 
-.bio-section{
+            max-width: 950px;
 
-    background:var(--bg);
+            margin: auto;
 
-}
+            padding: 45px;
 
-.bio-card{
+            border-radius: 25px;
 
-    max-width:950px;
+            background: var(--card);
 
-    margin:auto;
+            border:
+                1px solid var(--border);
 
-    padding:45px;
+            box-shadow:
+                0 15px 45px var(--shadow);
 
-    border-radius:25px;
+            text-align: center;
 
-    background:var(--card);
+        }
 
-    border:
-    1px solid var(--border);
+        .bio-icon {
 
-    box-shadow:
-    0 15px 45px
-    var(--shadow);
+            font-size: 45px;
 
-    text-align:center;
+            margin-bottom: 15px;
 
-}
+        }
 
-.bio-icon{
+        .bio-text {
 
-    font-size:45px;
+            font-size:
+                clamp(20px, 3vw, 30px);
 
-    margin-bottom:15px;
+            font-weight: 700;
 
-}
+            line-height: 1.7;
 
-.bio-text{
+        }
 
-    font-size:
-    clamp(20px,3vw,30px);
+        .bio-text .green {
 
-    font-weight:700;
+            color: var(--accent);
 
-    line-height:1.7;
+        }
 
-}
+        .bio-sub {
 
-.bio-text .green{
+            margin-top: 18px;
 
-    color:var(--accent);
+            color: var(--muted);
 
-}
+            line-height: 1.7;
 
-.bio-sub{
+        }
 
-    margin-top:18px;
 
-    color:var(--muted);
+        /* ================= TIPS ================= */
 
-    line-height:1.7;
+        .tips {
 
-}
+            background: var(--card2);
 
+        }
 
-/* ================= TIPS ================= */
+        .tip-box {
 
-.tips{
+            max-width: 850px;
 
-    background:var(--card2);
+            padding: 50px;
 
-}
+            border-radius: 22px;
 
-.tip-box{
+            background: var(--card);
 
-    max-width:850px;
+            border:
+                1px solid var(--border);
 
-    padding:50px;
+            box-shadow:
+                0 15px 40px var(--shadow);
 
-    border-radius:22px;
+        }
 
-    background:var(--card);
+        .tip-box h2 {
 
-    border:
-    1px solid var(--border);
+            font-size: 45px;
 
-    box-shadow:
-    0 15px 40px
-    var(--shadow);
+            margin: 15px 0;
 
-}
+        }
 
-.tip-box h2{
+        .tip-box p {
 
-    font-size:45px;
+            color: var(--muted);
 
-    margin:15px 0;
+            line-height: 1.8;
 
-}
+            margin-bottom: 25px;
 
-.tip-box p{
+        }
 
-    color:var(--muted);
 
-    line-height:1.8;
+        /* ================= ABOUT ================= */
 
-    margin-bottom:25px;
+        .about {
 
-}
+            display: grid;
 
+            grid-template-columns:
+                1fr 1fr;
 
-/* ================= ABOUT ================= */
+            gap: 70px;
 
-.about{
+            align-items: center;
 
-    display:grid;
+        }
 
-    grid-template-columns:
-    1fr 1fr;
+        .about h2 {
 
-    gap:70px;
+            font-size: 50px;
 
-    align-items:center;
+        }
 
-}
+        .about p {
 
-.about h2{
+            color: var(--muted);
 
-    font-size:50px;
+            font-size: 18px;
 
-}
+            line-height: 1.8;
 
-.about p{
+        }
 
-    color:var(--muted);
 
-    font-size:18px;
+        /* ================= OWNER ================= */
 
-    line-height:1.8;
+        .owner-section {
 
-}
+            background: var(--bg);
 
+        }
 
-/* ================= OWNER ================= */
+        .owner-card {
 
-.owner-section{
+            max-width: 950px;
 
-    background:var(--bg);
+            margin: auto;
 
-}
+            padding: 40px;
 
-.owner-card{
+            border-radius: 25px;
 
-    max-width:950px;
+            background: var(--card);
 
-    margin:auto;
+            border:
+                1px solid var(--border);
 
-    padding:40px;
+            display: flex;
 
-    border-radius:25px;
+            align-items: center;
 
-    background:var(--card);
+            gap: 40px;
 
-    border:
-    1px solid var(--border);
+            box-shadow:
+                0 15px 45px var(--shadow);
 
-    display:flex;
+            transition: .35s;
 
-    align-items:center;
+        }
 
-    gap:40px;
+        .owner-card:hover {
 
-    box-shadow:
-    0 15px 45px
-    var(--shadow);
+            transform:
+                translateY(-6px);
 
-    transition:.35s;
+            border-color:
+                var(--accent);
 
-}
+        }
 
-.owner-card:hover{
 
-    transform:
-    translateY(-6px);
+        /* OWNER PHOTO AREA */
 
-    border-color:
-    var(--accent);
+        .owner-photo {
 
-}
+            width: 180px;
+            height: 180px;
 
+            min-width: 180px;
 
-/* OWNER PHOTO PLACEHOLDER */
+            border-radius: 50%;
 
-.owner-photo{
+            border:
+                4px solid var(--accent);
 
-    width:180px;
-    height:180px;
+            background: var(--card2);
 
-    min-width:180px;
+            display: flex;
 
-    border-radius:50%;
+            align-items: center;
 
-    border:
-    4px solid var(--accent);
+            justify-content: center;
 
-    background:var(--card2);
+            text-align: center;
 
-    display:flex;
+            color: var(--muted);
 
-    align-items:center;
+            overflow: hidden;
 
-    justify-content:center;
+        }
 
-    text-align:center;
+        .owner-photo img {
 
-    color:var(--muted);
+            width: 100%;
+            height: 100%;
 
-    overflow:hidden;
+            object-fit: cover;
 
-}
+        }
 
-.owner-photo img{
+        .owner-photo-placeholder {
 
-    width:100%;
-    height:100%;
+            font-size: 15px;
 
-    object-fit:cover;
+            line-height: 1.6;
 
-}
+        }
 
-.owner-photo-placeholder{
 
-    font-size:15px;
+        /* OWNER INFO */
 
-    line-height:1.6;
+        .owner-info {
 
-}
+            flex: 1;
 
+        }
 
-/* OWNER INFO */
+        .owner-info h3 {
 
-.owner-info{
+            font-size: 36px;
 
-    flex:1;
+            margin-bottom: 8px;
 
-}
+        }
 
-.owner-info h3{
+        .owner-role {
 
-    font-size:36px;
+            color: var(--accent);
 
-    margin-bottom:8px;
+            font-weight: 900;
 
-}
+            margin-bottom: 18px;
 
-.owner-role{
+        }
 
-    color:var(--accent);
+        .owner-info p {
 
-    font-weight:900;
+            color: var(--muted);
 
-    margin-bottom:18px;
+            line-height: 1.8;
 
-}
+            margin-bottom: 22px;
 
-.owner-info p{
+        }
 
-    color:var(--muted);
+        .owner-facebook-btn {
 
-    line-height:1.8;
+            display: inline-block;
 
-    margin-bottom:22px;
+            background: #1877f2;
 
-}
+            color: white;
 
-.owner-facebook-btn{
+            padding: 14px 22px;
 
-    display:inline-block;
+            border-radius: 9px;
 
-    background:#1877f2;
+            text-decoration: none;
 
-    color:white;
+            font-weight: 900;
 
-    padding:14px 22px;
+            transition: .3s;
 
-    border-radius:9px;
+        }
 
-    text-decoration:none;
+        .owner-facebook-btn:hover {
 
-    font-weight:900;
+            background: #0d65d9;
 
-    transition:.3s;
+            transform:
+                scale(1.04);
 
-}
+        }
 
-.owner-facebook-btn:hover{
 
-    background:#0d65d9;
+        /* ================= TEAM ================= */
 
-    transform:
-    scale(1.04);
+        .team-section {
 
-}
+            background: var(--card2);
 
+        }
 
-/* ================= FACEBOOK PAGE ================= */
+        .team-card {
 
-.social-card{
+            max-width: 950px;
 
-    max-width:900px;
+            margin: auto;
 
-    position:relative;
+            padding: 40px;
 
-    overflow:hidden;
+            border-radius: 25px;
 
-    padding:35px;
+            background: var(--card);
 
-    border-radius:24px;
+            border:
+                1px solid var(--border);
 
-    background:var(--card);
+            display: flex;
 
-    border:
-    1px solid var(--border);
+            align-items: center;
 
-    display:flex;
+            gap: 40px;
 
-    align-items:center;
+            box-shadow:
+                0 15px 45px var(--shadow);
 
-    justify-content:space-between;
+            transition: .35s;
 
-    gap:30px;
+        }
 
-    transition:.35s;
+        .team-card:hover {
 
-    box-shadow:
-    0 15px 40px
-    var(--shadow);
+            transform:
+                translateY(-6px);
 
-}
+            border-color:
+                var(--accent);
 
-.social-card:hover{
+        }
 
-    transform:
-    translateY(-6px);
 
-    border-color:#1877f2;
+        /* TEAM PHOTO AREA */
 
-}
+        .team-photo {
 
-.social-left{
+            width: 220px;
+            height: 220px;
 
-    display:flex;
+            min-width: 220px;
 
-    align-items:center;
+            border-radius: 25px;
 
-    gap:22px;
+            border:
+                4px solid var(--accent);
 
-}
+            background: var(--card2);
 
-.facebook-icon{
+            display: flex;
 
-    width:70px;
-    height:70px;
+            align-items: center;
 
-    display:flex;
+            justify-content: center;
 
-    align-items:center;
-    justify-content:center;
+            text-align: center;
 
-    border-radius:20px;
+            color: var(--muted);
 
-    background:#1877f2;
+            overflow: hidden;
 
-    color:white;
+        }
 
-    font-size:40px;
+        .team-photo img {
 
-    font-weight:bold;
+            width: 100%;
+            height: 100%;
 
-}
+            object-fit: cover;
 
-.social-info h3{
+        }
 
-    font-size:27px;
+        .team-photo-placeholder {
 
-    margin-bottom:5px;
+            font-size: 17px;
 
-}
+            line-height: 1.6;
 
-.social-info p{
+        }
 
-    color:var(--muted);
 
-}
+        /* TEAM INFO */
 
-.facebook-btn{
+        .team-info {
 
-    background:#1877f2;
+            flex: 1;
 
-    color:white;
+        }
 
-    padding:14px 22px;
+        .team-info h3 {
 
-    border-radius:9px;
+            font-size: 36px;
 
-    text-decoration:none;
+            margin-bottom: 12px;
 
-    font-weight:900;
+        }
 
-    transition:.3s;
+        .team-info p {
 
-}
+            color: var(--muted);
 
-.facebook-btn:hover{
+            line-height: 1.8;
 
-    background:#0d65d9;
+        }
 
-    transform:
-    scale(1.04);
 
-}
+        /* ================= FACEBOOK PAGE ================= */
 
+        .social-card {
 
-/* ================= CTA ================= */
+            max-width: 900px;
 
-.cta{
+            position: relative;
 
-    margin:
-    20px 8% 90px;
+            overflow: hidden;
 
-    padding:
-    70px 8%;
+            padding: 35px;
 
-    border-radius:25px;
+            border-radius: 24px;
 
-    background:
-    var(--accent);
+            background: var(--card);
 
-    color:#071000;
+            border:
+                1px solid var(--border);
 
-}
+            display: flex;
 
-.cta .section-tag{
+            align-items: center;
 
-    color:#071000;
+            justify-content: space-between;
 
-}
+            gap: 30px;
 
-.cta h2{
+            transition: .35s;
 
-    font-size:55px;
+            box-shadow:
+                0 15px 40px var(--shadow);
 
-    margin:
-    15px 0 28px;
+        }
 
-}
+        .social-card:hover {
 
-.cta-btn{
+            transform:
+                translateY(-6px);
 
-    background:#071000;
+            border-color: #1877f2;
 
-    color:var(--accent);
+        }
 
-}
+        .social-left {
 
+            display: flex;
 
-/* ================= FOOTER ================= */
+            align-items: center;
 
-footer{
+            gap: 22px;
 
-    padding:45px 8%;
+        }
 
-    border-top:
-    1px solid var(--border);
+        .facebook-icon {
 
-    background:var(--header);
+            width: 70px;
+            height: 70px;
 
-    display:flex;
+            display: flex;
 
-    justify-content:space-between;
+            align-items: center;
+            justify-content: center;
 
-    flex-wrap:wrap;
+            border-radius: 20px;
 
-    gap:20px;
+            background: #1877f2;
 
-}
+            color: white;
 
-footer strong{
+            font-size: 40px;
 
-    font-size:20px;
+            font-weight: bold;
 
-}
+        }
 
-footer p{
+        .social-info h3 {
 
-    color:var(--muted);
+            font-size: 27px;
 
-    margin-top:7px;
+            margin-bottom: 5px;
 
-}
+        }
 
+        .social-info p {
 
-/* ================= MOBILE ================= */
+            color: var(--muted);
 
-@media(max-width:750px){
+        }
 
-    header{
+        .facebook-btn {
 
-        padding:
-        0 5%;
+            background: #1877f2;
 
-    }
+            color: white;
 
-    nav{
+            padding: 14px 22px;
 
-        display:none;
+            border-radius: 9px;
 
-    }
+            text-decoration: none;
 
-    .hero{
+            font-weight: 900;
 
-        padding:
-        70px 6%;
+            transition: .3s;
 
-    }
+        }
 
-    section{
+        .facebook-btn:hover {
 
-        padding:
-        70px 6%;
+            background: #0d65d9;
 
-    }
+            transform:
+                scale(1.04);
 
-    .cards{
+        }
 
-        grid-template-columns:1fr;
 
-    }
+        /* ================= CTA ================= */
 
-    .video-grid{
+        .cta {
 
-        grid-template-columns:1fr;
+            margin:
+                20px 8% 90px;
 
-    }
+            padding:
+                70px 8%;
 
-    .section-title{
+            border-radius: 25px;
 
-        font-size:38px;
+            background:
+                var(--accent);
 
-    }
+            color: #071000;
 
-    .about{
+        }
 
-        grid-template-columns:1fr;
+        .cta .section-tag {
 
-        gap:30px;
+            color: #071000;
 
-    }
+        }
 
-    .about h2{
+        .cta h2 {
 
-        font-size:40px;
+            font-size: 55px;
 
-    }
+            margin:
+                15px 0 28px;
 
-    .tip-box{
+        }
 
-        padding:
-        35px 25px;
+        .cta-btn {
 
-    }
+            background: #071000;
 
-    .tip-box h2{
+            color: var(--accent);
 
-        font-size:35px;
+        }
 
-    }
 
-    .social-card{
+        /* ================= FOOTER ================= */
 
-        flex-direction:column;
+        footer {
 
-        align-items:flex-start;
+            padding: 45px 8%;
 
-        padding:28px;
+            border-top:
+                1px solid var(--border);
 
-    }
+            background: var(--header);
 
-    .facebook-btn{
+            display: flex;
 
-        width:100%;
+            justify-content: space-between;
 
-        text-align:center;
+            flex-wrap: wrap;
 
-    }
+            gap: 20px;
 
-    .cta{
+        }
 
-        margin:
-        10px 6% 60px;
+        footer strong {
 
-        padding:
-        50px 28px;
+            font-size: 20px;
 
-    }
+        }
 
-    .cta h2{
+        footer p {
 
-        font-size:40px;
+            color: var(--muted);
 
-    }
+            margin-top: 7px;
 
+        }
 
-    /* OWNER MOBILE */
 
-    .owner-card{
+        /* ================= MOBILE ================= */
 
-        flex-direction:column;
+        @media(max-width:750px) {
 
-        text-align:center;
+            header {
 
-        padding:35px 25px;
+                padding:
+                    0 5%;
 
-    }
+            }
 
-    .owner-photo{
+            nav {
 
-        width:160px;
-        height:160px;
+                display: none;
 
-        min-width:160px;
+            }
 
-    }
+            .hero {
 
-    .owner-info h3{
+                padding:
+                    70px 6%;
 
-        font-size:30px;
+            }
 
-    }
+            section {
 
-    .owner-facebook-btn{
+                padding:
+                    70px 6%;
 
-        width:100%;
+            }
 
-        text-align:center;
+            .cards {
 
-    }
+                grid-template-columns: 1fr;
 
+            }
 
-    footer{
+            .video-grid {
 
-        flex-direction:column;
+                grid-template-columns: 1fr;
 
-    }
+            }
 
-}
+            .section-title {
 
-</style>
+                font-size: 38px;
 
+            }
+
+            .about {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+
+            }
+
+            .about h2 {
+
+                font-size: 40px;
+
+            }
+
+            .tip-box {
+
+                padding:
+                    35px 25px;
+
+            }
+
+            .tip-box h2 {
+
+                font-size: 35px;
+
+            }
+
+            .social-card {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 28px;
+
+            }
+
+            .facebook-btn {
+
+                width: 100%;
+
+                text-align: center;
+
+            }
+
+            .cta {
+
+                margin:
+                    10px 6% 60px;
+
+                padding:
+                    50px 28px;
+
+            }
+
+            .cta h2 {
+
+                font-size: 40px;
+
+            }
+
+
+            /* OWNER MOBILE */
+
+            .owner-card {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 35px 25px;
+
+            }
+
+            .owner-photo {
+
+                width: 160px;
+
+                height: 160px;
+
+                min-width: 160px;
+
+            }
+
+            .owner-info h3 {
+
+                font-size: 30px;
+
+            }
+
+            .owner-facebook-btn {
+
+                width: 100%;
+
+                text-align: center;
+
+            }
+
+
+            /* TEAM MOBILE */
+
+            .team-card {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 35px 25px;
+
+            }
+
+            .team-photo {
+
+                width: 180px;
+
+                height: 180px;
+
+                min-width: 180px;
+
+            }
+
+            .team-info h3 {
+
+                font-size: 30px;
+
+            }
+
+
+            footer {
+
+                flex-direction: column;
+
+            }
+
+        }
+    </style>
 </head>
 
+<body> <!-- ================= NAVBAR ================= -->
+    <header>
+        <div class="logo">
 
-<body>
-
-
-<!-- ================= NAVBAR ================= -->
-
-<header>
-
-    <div class="logo">
-
-        <span>EXERCISE</span>
-        WITH LITON
-
-    </div>
-
-
-    <nav>
-
-        <a href="#home">Home</a>
-
-        <a href="#workouts">Workouts</a>
-
-        <a href="#videos">Videos</a>
-
-        <a href="#tips">Tips</a>
-
-        <a href="#about">About</a>
-
-        <a href="#owner">Owner</a>
-
-    </nav>
-
-
-    <button
-        class="theme-btn"
-        id="themeButton"
-        title="Dark / Light Mode"
-    >
-
-        🌙
-
-    </button>
-
-</header>
-
-
-
-<!-- ================= HERO ================= -->
-
-<section
-    class="hero"
-    id="home"
->
-
-    <div class="hero-content">
-
-        <div class="tag">
-            MOVE • TRAIN • GROW
-        </div>
-
-
-        <h1>
-
-            Build a<br>
-
-            <span>Stronger</span> You.
-
-        </h1>
-
-
-        <p class="hero-text">
-
-            💪 সুস্থ থাকুন, ফিট থাকুন।
-
-            <br><br>
-
-            প্রতিদিনের এক্সারসাইজ,
-            ডায়েট টিপস এবং সঠিক গাইডের
-            জন্য ফলো করুন।
-
-            <br><br>
-
-            🚀 Let's get fit together with Liton!
-
-        </p>
-
-
-        <div class="buttons">
-
-            <a
-                href="#videos"
-                class="btn primary"
-            >
-                Watch Videos →
-            </a>
-
-
-            <a
-                href="#facebook"
-                class="btn secondary"
-            >
-                Follow Facebook
-            </a>
+            <span>EXERCISE</span>
+            WITH LITON
 
         </div>
 
-    </div>
 
-</section>
+        <nav>
 
+            <a href="#home">Home</a>
 
+            <a href="#workouts">Workouts</a>
 
-<!-- ================= WORKOUTS ================= -->
+            <a href="#videos">Videos</a>
 
-<section id="workouts">
+            <a href="#about">About</a>
 
-    <div class="section-tag">
-        WORKOUT LIBRARY
-    </div>
+            <a href="#owner">Owner</a>
 
-
-    <h2 class="section-title">
-        Train With Purpose.
-    </h2>
+        </nav>
 
 
-    <div class="cards">
+        <button class="theme-btn" id="themeButton" title="Dark / Light Mode">
 
+            🌙
 
-        <div class="card">
+        </button>
 
-            <div class="icon">
-                💪
+    </header> <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <div class="tag">
+                MOVE • TRAIN • GROW
             </div>
 
-            <h3>
-                Strength
-            </h3>
 
-            <p>
+            <h1>
 
-                Bodyweight exercises এবং
-                simple movements-এর মাধ্যমে
-                strength training-এর ধারণা
-                শিখুন।
+                Build a<br>
 
-            </p>
+                <span>Stronger</span> You.
 
-        </div>
+            </h1>
 
 
+            <p class="hero-text">
 
-        <div class="card">
+                💪 সুস্থ থাকুন, ফিট থাকুন।
 
-            <div class="icon">
-                🏃
-            </div>
+                <br><br>
 
-            <h3>
-                Cardio
-            </h3>
+                প্রতিদিনের এক্সারসাইজ,
+                ডায়েট টিপস এবং সঠিক গাইডের
+                জন্য আমাদের টিমকে ফলো করুন।
 
-            <p>
+                <br><br>
 
-                Active movement এবং cardio
-                workout-এর মাধ্যমে endurance
-                বাড়ানোর চেষ্টা করুন।
-
-            </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="icon">
-                🧘
-            </div>
-
-            <h3>
-                Mobility
-            </h3>
-
-            <p>
-
-                Flexibility এবং mobility
-                উন্নত করার জন্য নিয়মিত
-                movement practice করুন।
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= FACEBOOK VIDEOS ================= -->
-
-<section
-    class="video-section"
-    id="videos"
->
-
-    <div class="section-tag">
-        LATEST VIDEOS
-    </div>
-
-
-    <h2 class="section-title">
-        Watch Our Videos.
-    </h2>
-
-
-    <p class="video-intro">
-
-        Exercise With Liton-এর Facebook
-        videos দেখুন। যেকোনো video card-এ
-        click করলে সরাসরি Facebook-এ গিয়ে
-        video দেখতে পারবেন।
-
-    </p>
-
-
-    <div class="video-grid">
-
-
-        <!-- VIDEO 1 -->
-
-        <a
-            class="video-card"
-            href="https://www.facebook.com/share/v/1Ejygj7hZt/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            <div class="play-button">
-                ▶
-            </div>
-
-            <h3>
-                Workout Video 01
-            </h3>
-
-            <p>
-                Watch on Facebook →
-            </p>
-
-        </a>
-
-
-
-        <!-- VIDEO 2 -->
-
-        <a
-            class="video-card"
-            href="https://www.facebook.com/share/v/16CjEpHwTet/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            <div class="play-button">
-                ▶
-            </div>
-
-            <h3>
-                Workout Video 02
-            </h3>
-
-            <p>
-                Watch on Facebook →
-            </p>
-
-        </a>
-
-
-
-        <!-- VIDEO 3 -->
-
-        <a
-            class="video-card"
-            href="https://www.facebook.com/share/v/1RPnPqwrxM/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            <div class="play-button">
-                ▶
-            </div>
-
-            <h3>
-                Workout Video 03
-            </h3>
-
-            <p>
-                Watch on Facebook →
-            </p>
-
-        </a>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= BIO ================= -->
-
-<section class="bio-section">
-
-    <div class="bio-card">
-
-        <div class="bio-icon">
-            💪
-        </div>
-
-
-        <div class="bio-text">
-
-            সুস্থ থাকুন, ফিট থাকুন।
-
-            <br>
-
-            প্রতিদিনের এক্সারসাইজ,
-            ডায়েট টিপস এবং সঠিক গাইডের
-            জন্য ফলো করুন।
-
-            <br>
-
-            <span class="green">
                 🚀 Let's get fit together with Liton!
-            </span>
-
-        </div>
-
-
-        <p class="bio-sub">
-
-            Stay active • Stay healthy •
-            Keep improving
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= TIPS ================= -->
-
-<section
-    class="tips"
-    id="tips"
->
-
-    <div class="tip-box">
-
-        <div class="section-tag">
-            FITNESS TIP
-        </div>
-
-
-        <h2>
-            Consistency Beats Perfection.
-        </h2>
-
-
-        <p>
-
-            একটি realistic routine দিয়ে
-            শুরু করুন। Exercise করার সময়
-            সঠিক technique-এর দিকে মনোযোগ
-            দিন এবং প্রয়োজন অনুযায়ী rest নিন।
-
-        </p>
-
-
-        <a
-            href="#videos"
-            class="btn primary"
-        >
-            Watch Workouts →
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= ABOUT ================= -->
-
-<section
-    class="about"
-    id="about"
->
-
-    <div>
-
-        <div class="section-tag">
-            ABOUT
-        </div>
-
-
-        <h2>
-
-            Welcome to<br>
-
-            Exercise With Liton.
-
-        </h2>
-
-    </div>
-
-
-    <p>
-
-        Exercise With Liton হলো একটি
-        fitness-focused platform যেখানে
-        exercise ideas, fitness tips,
-        workout videos এবং motivation
-        পাওয়া যাবে।
-
-        <br><br>
-
-        আমাদের লক্ষ্য হলো সহজভাবে
-        মানুষকে নিয়মিত active থাকতে
-        উৎসাহিত করা।
-
-    </p>
-
-</section>
-
-
-
-<!-- ================= OWNER ================= -->
-
-<section
-    class="owner-section"
-    id="owner"
->
-
-    <div class="section-tag">
-        ABOUT THE OWNER
-    </div>
-
-
-    <h2 class="section-title">
-        Meet The Owner.
-    </h2>
-
-
-    <div class="owner-card">
-
-
-        <!--
-        =====================================
-        OWNER PHOTO AREA
-
-        পরে ছবি দিতে চাইলে:
-
-        1. ছবির নাম owner.jpg রাখবে
-        2. owner.jpg এবং index.html একই folder-এ রাখবে
-        3. নিচের placeholder-এর জায়গায়:
-
-        <img src="owner.jpg" alt="Md. Liton">
-
-        বসাবে।
-        =====================================
-        -->
-
-        <div class="owner-photo">
-
-            <div class="owner-photo-placeholder">
-
-                🖼️
-
-                <br>
-
-                Owner Photo
-
-                <br>
-
-                Coming Soon
-
-            </div>
-
-        </div>
-
-
-        <div class="owner-info">
-
-            <h3>
-                Md. Liton
-            </h3>
-
-
-            <div class="owner-role">
-
-                Founder & Owner — Exercise With Liton
-
-            </div>
-
-
-            <p>
-
-                Exercise With Liton-এর Founder & Owner
-                হলেন Md. Liton। Fitness, exercise এবং
-                healthy lifestyle সম্পর্কিত content
-                তৈরি ও শেয়ার করার উদ্দেশ্যে এই
-                platform পরিচালিত হচ্ছে।
 
             </p>
 
 
-            <a
-                href="https://www.facebook.com/share/1QP3JzXGkj/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="owner-facebook-btn"
-            >
+            <div class="buttons">
 
-                Visit Owner's Facebook →
+                <a href="#videos" class="btn primary">
+                    Watch Our Videos →
+                </a>
 
-            </a>
+
+                <a href="#facebook" class="btn secondary">
+                    Follow on Facebook
+                </a>
+
+            </div>
 
         </div>
 
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= FACEBOOK PAGE ================= -->
-
-<section id="facebook">
-
-    <div class="section-tag">
-        FOLLOW US
-    </div>
+    </section> <!-- ================= WORKOUTS ================= -->
+    <section id="workouts">
+        <div class="section-tag">
+            WORKOUT LIBRARY
+        </div>
 
 
-    <h2 class="section-title">
-        Join Our Facebook Community.
-    </h2>
+        <h2 class="section-title">
+            Train With Purpose.
+        </h2>
 
 
-    <div class="social-card">
+        <div class="cards">
 
 
-        <div class="social-left">
+            <div class="card">
 
-            <div class="facebook-icon">
-                f
-            </div>
-
-
-            <div class="social-info">
+                <div class="icon">
+                    💪
+                </div>
 
                 <h3>
-                    Exercise With Liton
+                    Strength
                 </h3>
-
 
                 <p>
 
-                    New fitness videos,
-                    exercises, tips and updates
-                    পেতে আমাদের Facebook page
-                    follow করুন।
+                    Bodyweight exercises এবং
+                    simple movements-এর মাধ্যমে
+                    strength training-এর ধারণা
+                    শিখুন।
 
                 </p>
 
             </div>
 
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🏃
+                </div>
+
+                <h3>
+                    Cardio
+                </h3>
+
+                <p>
+
+                    Active movement এবং cardio
+                    workout-এর মাধ্যমে endurance
+                    বাড়ানোর চেষ্টা করুন।
+
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🧘
+                </div>
+
+                <h3>
+                    Mobility
+                </h3>
+
+                <p>
+
+                    Flexibility এবং mobility
+                    উন্নত করার জন্য নিয়মিত
+                    movement practice করুন।
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section> <!-- ================= FACEBOOK VIDEOS ================= -->
+    <section class="video-section" id="videos">
+        <div class="section-tag">
+            LATEST VIDEOS
         </div>
 
 
-        <a
-            href="https://www.facebook.com/share/19T71gVA5b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="facebook-btn"
-        >
-
-            Visit Facebook →
-
-        </a>
+        <h2 class="section-title">
+            Watch Our Videos.
+        </h2>
 
 
-    </div>
+        <p class="video-intro">
 
-</section>
+            Exercise With Liton-এর Facebook
+            videos দেখুন। যেকোনো video card-এ
+            click করলে সরাসরি Facebook-এ গিয়ে
+            video দেখতে পারবেন।
 
-
-
-<!-- ================= CTA ================= -->
-
-<div class="cta">
-
-    <div class="section-tag">
-        READY?
-    </div>
+        </p>
 
 
-    <h2>
-        Make Today An Active Day.
-    </h2>
+        <div class="video-grid">
 
 
-    <a
-        href="#videos"
-        class="btn cta-btn"
-    >
-        Watch Videos →
-    </a>
+            <!-- VIDEO 1 -->
 
-</div>
+            <a class="video-card" href="https://www.facebook.com/share/v/1Ejygj7hZt/" target="_blank"
+                rel="noopener noreferrer">
+
+                <div class="play-button">
+                    ▶
+                </div>
+
+                <h3>
+                    Workout Video 01
+                </h3>
+
+                <p>
+                    Watch on Facebook →
+                </p>
+
+            </a>
 
 
 
-<!-- ================= FOOTER ================= -->
+            <!-- VIDEO 2 -->
 
-<footer>
+            <a class="video-card" href="https://www.facebook.com/share/v/16CjEpHwTet/" target="_blank"
+                rel="noopener noreferrer">
+
+                <div class="play-button">
+                    ▶
+                </div>
+
+                <h3>
+                    Workout Video 02
+                </h3>
+
+                <p>
+                    Watch on Facebook →
+                </p>
+
+            </a>
 
 
-    <div>
 
-        <strong>
-            EXERCISE WITH LITON
-        </strong>
+            <!-- VIDEO 3 -->
+
+            <a class="video-card" href="https://www.facebook.com/share/v/1RPnPqwrxM/" target="_blank"
+                rel="noopener noreferrer">
+
+                <div class="play-button">
+                    ▶
+                </div>
+
+                <h3>
+                    Workout Video 03 (Editing)
+                </h3>
+
+                <p>
+                    Watch on Facebook →
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section> <!-- ================= BIO ================= -->
+    <section class="bio-section">
+        <div class="bio-card">
+
+            <div class="bio-icon">
+                💪
+            </div>
+
+
+            <div class="bio-text">
+
+                JK lifestyle ফলো করুন, সুস্থ থাকুন, ফিট থাকুন।
+
+                <br>
+
+                প্রতিদিনের এক্সারসাইজ,
+                ডায়েট টিপস এবং সঠিক গাইডের
+                জন্য আমাদের ফলো করুন।
+
+                <br>
+
+                <span class="green">
+                    🚀 Let's get fit together with Liton! 🔥
+                </span>
+
+            </div>
+
+
+            <p class="bio-sub">
+
+                Stay active • Stay healthy •
+                Keep improving
+
+            </p>
+
+        </div>
+
+    </section> <!-- ================= TIPS ================= -->
+    <section class="tips" id="tips">
+        <div class="tip-box">
+
+            <div class="section-tag">
+                FITNESS TIP
+            </div>
+
+
+            <h2>
+                Consistency Beats Perfection.
+            </h2>
+
+
+            <p>
+
+                একটি realistic routine দিয়ে
+                শুরু করুন। Exercise করার সময়
+                সঠিক সময় ও technique-এর দিকে মনোযোগ
+                দিন এবং প্রয়োজন অনুযায়ী rest নিন। প্রতিদিন ফজরের
+                সালাতের পর ব্যায়াম করার চেষ্টা করুন। আর ৫ ওয়াক্ত
+                সালাত আদায় করুন।
+
+            </p>
+
+
+            <a href="#videos" class="btn primary">
+                Watch Workouts →
+            </a>
+
+        </div>
+
+    </section> <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+        <div>
+
+            <div class="section-tag">
+                ABOUT
+            </div>
+
+
+            <h2>
+
+                Welcome to<br>
+
+                Exercise With Liton.
+
+            </h2>
+
+        </div>
 
 
         <p>
-            💪 Move better. Feel stronger.
+
+            Exercise With Liton হলো একটি
+            fitness-focused platform যেখানে
+            exercise ideas, fitness tips,
+            workout videos এবং motivation
+            পাওয়া যাবে।
+
+            <br><br>
+
+            আমাদের লক্ষ্য হলো মানুষকে JK Lifestyle মানতে
+            উদসাহিত করা সহজভাবে
+            নিয়মিত active থাকতে
+            উৎসাহিত করা।
+
         </p>
 
-    </div>
+    </section> <!-- ================= OWNER ================= -->
+    <section class="owner-section" id="owner">
+        <div class="section-tag">
+            ABOUT THE OWNER
+        </div>
 
 
-    <p>
-
-        © 2026 Exercise With Liton.
-        All rights reserved.
-
-    </p>
+        <h2 class="section-title">
+            Meet The Owner.
+        </h2>
 
 
-</footer>
+        <div class="owner-card">
 
 
+            <div class="owner-photo">
 
-<!-- ================= JAVASCRIPT ================= -->
+                <img src="owner.jpg" alt="Md. Liton">
 
-<script>
-
-
-/* ================= DARK / LIGHT MODE ================= */
-
-const themeButton =
-    document.getElementById(
-        "themeButton"
-    );
+            </div>
 
 
-/* Load saved theme */
+            <div class="owner-info">
 
-const savedTheme =
-    localStorage.getItem(
-        "exerciseTheme"
-    );
-
-
-if(savedTheme === "light"){
-
-    document.body.classList.add(
-        "light"
-    );
-
-    themeButton.textContent =
-        "☀️";
-
-}
+                <h3>
+                    Md. Liton
+                </h3>
 
 
-/* Toggle */
+                <div class="owner-role">
 
-themeButton.addEventListener(
-    "click",
-    function(){
+                    Founder & Owner -- Exercise With Liton
 
-        document.body.classList.toggle(
-            "light"
-        );
+                </div>
 
 
-        if(
-            document.body.classList.contains(
+                <p>
+
+                    Exercise With Liton-এর Founder & Owner
+                    হলেন Md. Liton। Fitness, exercise এবং
+                    healthy lifestyle সম্পর্কিত content
+                    তৈরি ও শেয়ার করার উদ্দেশ্যে তিনি এই
+                    platform পরিচালনা করছেন।
+
+                </p>
+
+
+                <a href="https://www.facebook.com/share/1QP3JzXGkj/" target="_blank" rel="noopener noreferrer"
+                    class="owner-facebook-btn">
+
+                    Visit Owner's Facebook →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section> <!-- ================= TEAM ================= -->
+    <section class="team-section" id="team">
+        <div class="section-tag">
+            OUR TEAM
+        </div>
+
+
+        <h2 class="section-title">
+            Meet Our Team.
+        </h2>
+
+
+        <div class="team-card">
+
+
+            <div class="team-photo">
+
+                <img src="team.jpg" alt="Exercise With Liton Team">
+
+            </div>
+
+
+            <div class="team-info">
+
+                <h3>
+                    Exercise With Liton Team
+                </h3>
+
+
+                <p>
+
+                    Exercise With Liton-এর team
+                    fitness, exercise এবং healthy
+                    lifestyle সম্পর্কিত content
+                    তৈরি ও শেয়ার করার জন্য তারা সকলেই একসাথে
+                    কাজ করে যাচ্ছেন।
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section> <!-- ================= FACEBOOK PAGE ================= -->
+    <section id="facebook">
+        <div class="section-tag">
+            FOLLOW US
+        </div>
+
+
+        <h2 class="section-title">
+            Join Our Facebook Community.
+        </h2>
+
+
+        <div class="social-card">
+
+
+            <div class="social-left">
+
+                <div class="facebook-icon">
+                    f
+                </div>
+
+
+                <div class="social-info">
+
+                    <h3>
+                        Exercise With Liton
+                    </h3>
+
+
+                    <p>
+
+                        New fitness videos,
+                        exercises, tips and updates
+                        পেতে এখনই আমাদের Facebook page
+                        follow করুন।
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a href="https://www.facebook.com/share/19T71gVA5b/" target="_blank" rel="noopener noreferrer"
+                class="facebook-btn">
+
+                Visit Facebook →
+
+            </a>
+
+
+        </div>
+
+    </section> <!-- ================= CTA ================= -->
+    <div class="cta">
+        <div class="section-tag">
+            READY?
+        </div>
+
+
+        <h2>
+            Make Today An Active Day.
+        </h2>
+
+
+        <a href="#videos" class="btn cta-btn">
+            Watch Videos →
+        </a>
+
+    </div> <!-- ================= FOOTER ================= -->
+    <footer>
+        <div>
+
+            <strong>
+                EXERCISE WITH LITON
+            </strong>
+
+
+            <p>
+                💪 Move better. Feel stronger.
+            </p>
+
+        </div>
+
+
+        <p>
+
+            © 2026 Exercise With Liton.
+            All rights reserved.
+
+        </p>
+
+    </footer> <!-- ================= JAVASCRIPT ================= -->
+    <script>
+
+
+        /* ================= DARK / LIGHT MODE ================= */
+
+        const themeButton =
+            document.getElementById(
+                "themeButton"
+            );
+
+
+        /* Load saved theme */
+
+        const savedTheme =
+            localStorage.getItem(
+                "exerciseTheme"
+            );
+
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add(
                 "light"
-            )
-        ){
+            );
 
             themeButton.textContent =
                 "☀️";
 
-            localStorage.setItem(
-                "exerciseTheme",
-                "light"
-            );
-
         }
 
-        else{
 
-            themeButton.textContent =
-                "🌙";
+        /* Toggle */
 
-            localStorage.setItem(
-                "exerciseTheme",
-                "dark"
-            );
+        themeButton.addEventListener(
+            "click",
+            function () {
 
-        }
-
-    }
-);
-
-</script>
+                document.body.classList.toggle(
+                    "light"
+                );
 
 
+                if (
+                    document.body.classList.contains(
+                        "light"
+                    )
+                ) {
+
+                    themeButton.textContent =
+                        "☀️";
+
+                    localStorage.setItem(
+                        "exerciseTheme",
+                        "light"
+                    );
+
+                }
+
+                else {
+
+                    themeButton.textContent =
+                        "🌙";
+
+                    localStorage.setItem(
+                        "exerciseTheme",
+                        "dark"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
 </body>
 
 </html>
