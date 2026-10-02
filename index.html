@@ -1461,6 +1461,8 @@
             <a href="#home">Home</a>
 
             <a href="#workouts">Workouts</a>
+            
+            <a href="#posts">Posts</a>
 
             <a href="#videos">Videos</a>
 
@@ -1468,7 +1470,7 @@
 
             <a href="#owner">Owner</a>
 
-            <a href="#posts">Posts</a>
+           
 
         </nav>
 
@@ -1516,8 +1518,8 @@
 
             <div class="buttons">
 
-                <a href="#videos" class="btn primary">
-                    Watch Our Videos →
+                <a href="#posts" class="btn primary" id="latestPostButton">
+                    See Latest Post →
                 </a>
 
 
@@ -1612,7 +1614,26 @@
 
         </div>
 
-    </section> <!-- ================= FACEBOOK VIDEOS ================= -->
+</section>
+
+<!-- ================= LATEST POSTS ================= -->
+<section class="posts-section" id="posts">
+    <div class="section-tag">
+        LATEST POSTS
+    </div>
+
+    <h2 class="section-title">
+        Latest Fitness Posts.
+    </h2>
+
+    <div class="posts-grid" id="postsGrid">
+        <div class="posts-status">
+            Loading latest posts...
+        </div>
+    </div>
+</section>
+
+<!-- ================= FACEBOOK VIDEOS ================= -->
     <section class="video-section" id="videos">
         <div class="section-tag">
             LATEST VIDEOS
@@ -1755,7 +1776,7 @@
             <p>
 
                 একটি realistic routine দিয়ে
-                শুরু করুন। Exercise করার সময়
+                শুরু করুন। Exercise করার
                 সঠিক সময় ও technique-এর দিকে মনোযোগ
                 দিন এবং প্রয়োজন অনুযায়ী rest নিন। প্রতিদিন ফজরের
                 সালাতের পর ব্যায়াম করার চেষ্টা করুন। আর ৫ ওয়াক্ত
@@ -1910,25 +1931,7 @@
 
         </div>
 
-    </section> <!-- ================= LATEST POSTS ================= -->
-    <section class="posts-section" id="posts">
-        <div class="section-tag">
-            LATEST POSTS
-        </div>
-
-
-        <h2 class="section-title">
-            Latest Fitness Posts.
-        </h2>
-
-
-        <div class="posts-grid" id="postsGrid">
-            <div class="posts-status">
-                Loading latest posts...
-            </div>
-        </div>
-
-    </section> <!-- ================= FACEBOOK PAGE ================= -->
+</section> <!-- ================= FACEBOOK PAGE ================= -->
     <section id="facebook">
         <div class="section-tag">
             FOLLOW US
@@ -2099,6 +2102,9 @@
 
         const postsGrid =
             document.getElementById("postsGrid");
+
+        const latestPostButton =
+            document.getElementById("latestPostButton");
 
         const githubOwner =
             "khalid064";
@@ -2469,6 +2475,22 @@
                     }
                 );
 
+                if (
+                    latestPostButton &&
+                    posts.length > 0 &&
+                    posts[0].title
+                ) {
+
+                    latestPostButton.textContent =
+                        "See Latest Post: " +
+                        posts[0].title +
+                        " →";
+
+                    latestPostButton.href =
+                        "#posts";
+
+                }
+
                 postsGrid.innerHTML = "";
 
                 posts.forEach(
@@ -2498,6 +2520,13 @@
                     "CMS Posts Error:",
                     error
                 );
+
+                if (latestPostButton) {
+                    latestPostButton.textContent =
+                        "See Latest Post →";
+                    latestPostButton.href =
+                        "#posts";
+                }
 
                 postsGrid.innerHTML =
                     '<div class="posts-status">Latest posts could not be loaded right now.</div>';
