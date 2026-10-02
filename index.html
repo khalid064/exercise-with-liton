@@ -558,162 +558,6 @@
         }
 
 
-        /* ================= CMS LATEST POSTS ================= */
-
-        .posts-section {
-
-            background: var(--bg);
-
-        }
-
-        .posts-intro {
-
-            max-width: 700px;
-
-            color: var(--muted);
-
-            line-height: 1.7;
-
-            margin-top: -25px;
-
-            margin-bottom: 40px;
-
-        }
-
-        .posts-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-
-        }
-
-        .post-card {
-
-            background: var(--card);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 22px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 15px 40px var(--shadow);
-
-            transition: .35s;
-
-        }
-
-        .post-card:hover {
-
-            transform:
-                translateY(-8px);
-
-            border-color:
-                var(--accent);
-
-        }
-
-        .post-image {
-
-            width: 100%;
-
-            height: 210px;
-
-            display: block;
-
-            object-fit: cover;
-
-            background: var(--card2);
-
-        }
-
-        .post-content {
-
-            padding: 25px;
-
-        }
-
-        .post-date {
-
-            color: var(--accent);
-
-            font-size: 12px;
-
-            font-weight: 900;
-
-            letter-spacing: 1px;
-
-            margin-bottom: 10px;
-
-        }
-
-        .post-content h3 {
-
-            font-size: 24px;
-
-            line-height: 1.3;
-
-            margin-bottom: 12px;
-
-        }
-
-        .post-content p {
-
-            color: var(--muted);
-
-            line-height: 1.7;
-
-            margin-bottom: 20px;
-
-        }
-
-        .post-read-more {
-
-            display: inline-block;
-
-            color: var(--accent);
-
-            text-decoration: none;
-
-            font-weight: 900;
-
-            transition: .3s;
-
-        }
-
-        .post-read-more:hover {
-
-            transform:
-                translateX(5px);
-
-        }
-
-        .posts-status {
-
-            grid-column: 1 / -1;
-
-            padding: 35px;
-
-            text-align: center;
-
-            color: var(--muted);
-
-            background: var(--card);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 20px;
-
-        }
-
-
         /* ================= FITNESS BIO ================= */
 
         .bio-section {
@@ -1334,6 +1178,78 @@
         }
 
 
+        /* ================= CMS LATEST POSTS ================= */
+
+        .posts-section {
+            background: var(--bg);
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .post-card {
+            overflow: hidden;
+            border-radius: 22px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: .35s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 220px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-date {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .post-content h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .post-content p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .post-read-more {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 900;
+        }
+
+        .posts-status {
+            grid-column: 1 / -1;
+            padding: 25px;
+            text-align: center;
+            color: var(--muted);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+        }
+
         /* ================= MOBILE ================= */
 
         @media(max-width:750px) {
@@ -1372,12 +1288,6 @@
             }
 
             .video-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-            .posts-grid {
 
                 grid-template-columns: 1fr;
 
@@ -1517,6 +1427,13 @@
             }
 
 
+            .posts-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
             footer {
 
                 flex-direction: column;
@@ -1530,6 +1447,8 @@
 <body> <!-- ================= NAVBAR ================= -->
     <header>
         <div class="logo">
+
+        
 
             <span>EXERCISE</span>
             WITH LITON
@@ -1545,11 +1464,11 @@
 
             <a href="#videos">Videos</a>
 
-            <a href="#posts">Posts</a>
-
             <a href="#about">About</a>
 
             <a href="#owner">Owner</a>
+
+            <a href="#posts">Posts</a>
 
         </nav>
 
@@ -1782,43 +1701,7 @@
 
         </div>
 
-    </section>
-
-
-    <!-- ================= LATEST POSTS ================= -->
-
-    <section class="posts-section" id="posts">
-
-        <div class="section-tag">
-            LATEST POSTS
-        </div>
-
-
-        <h2 class="section-title">
-            Latest Posts.
-        </h2>
-
-
-        <p class="posts-intro">
-
-            Exercise With Liton-এর latest fitness posts,
-            tips এবং updates এখানে দেখতে পারবেন।
-
-        </p>
-
-
-        <div class="posts-grid" id="postsGrid">
-
-            <div class="posts-status">
-                Loading latest posts...
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= BIO ================= -->
+    </section> <!-- ================= BIO ================= -->
     <section class="bio-section">
         <div class="bio-card">
 
@@ -2027,6 +1910,24 @@
 
         </div>
 
+    </section> <!-- ================= LATEST POSTS ================= -->
+    <section class="posts-section" id="posts">
+        <div class="section-tag">
+            LATEST POSTS
+        </div>
+
+
+        <h2 class="section-title">
+            Latest Fitness Posts.
+        </h2>
+
+
+        <div class="posts-grid" id="postsGrid">
+            <div class="posts-status">
+                Loading latest posts...
+            </div>
+        </div>
+
     </section> <!-- ================= FACEBOOK PAGE ================= -->
     <section id="facebook">
         <div class="section-tag">
@@ -2199,87 +2100,248 @@
         const postsGrid =
             document.getElementById("postsGrid");
 
+        const githubOwner =
+            "khalid064";
+
+        const githubRepo =
+            "exercise-with-liton";
+
+        const postsPath =
+            "content/posts";
 
         const postsAPI =
-            "https://api.github.com/repos/khalid064/exercise-with-liton/contents/content/posts?ref=main";
+            "https://api.github.com/repos/" +
+            githubOwner +
+            "/" +
+            githubRepo +
+            "/contents/" +
+            postsPath +
+            "?ref=main";
 
+
+        /* ================= PARSE FRONTMATTER ================= */
 
         function parsePost(markdown) {
 
-            const match =
-                markdown.match(
-                    /^---\s*([\s\S]*?)\s*---/
-                );
-
-
-            if (!match) {
-
-                return {};
-
-            }
-
-
-            const frontMatter =
-                match[1];
-
-
             const data = {};
 
+            if (!markdown) return data;
 
-            frontMatter
-                .split("\n")
-                .forEach(function (line) {
+            const match =
+                markdown.match(/^---\s*([\s\S]*?)\s*---/);
 
-                    const separator =
-                        line.indexOf(":");
+            if (!match) return data;
 
+            const frontMatter = match[1];
 
-                    if (separator === -1) {
+            const lines =
+                frontMatter.split(/\r?\n/);
 
-                        return;
+            let currentKey = null;
+
+            lines.forEach(function (line) {
+
+                const trimmed = line.trim();
+
+                if (!trimmed) return;
+
+                const fieldMatch =
+                    line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+
+                if (fieldMatch) {
+
+                    currentKey =
+                        fieldMatch[1].trim();
+
+                    let value =
+                        fieldMatch[2].trim();
+
+                    if (
+                        value.length >= 2 &&
+                        ((value.startsWith('"') && value.endsWith('"')) ||
+                         (value.startsWith("'") && value.endsWith("'")))
+                    ) {
+
+                        value = value.slice(1, -1);
 
                     }
 
+                    data[currentKey] = value;
 
-                    const key =
-                        line
-                            .slice(0, separator)
-                            .trim();
+                    return;
 
+                }
 
-                    const value =
-                        line
-                            .slice(separator + 1)
-                            .trim()
-                            .replace(/^["']|["']$/g, "");
+                if (
+                    currentKey &&
+                    data[currentKey] !== undefined
+                ) {
 
+                    const extraText = trimmed;
 
-                    data[key] = value;
+                    if (extraText) {
 
-                });
+                        data[currentKey] =
+                            (data[currentKey]
+                                ? data[currentKey] + " "
+                                : "") +
+                            extraText;
 
+                    }
+
+                }
+
+            });
 
             return data;
 
         }
 
 
+        /* ================= IMAGE URL ================= */
+
         function postImageURL(path) {
 
-            if (!path) {
+            if (!path) return "";
 
-                return "";
+            let imagePath =
+                String(path).trim();
+
+            imagePath =
+                imagePath.replace(/^['"]|['"]$/g, "");
+
+            if (
+                imagePath.startsWith("http://") ||
+                imagePath.startsWith("https://")
+            ) {
+
+                return imagePath;
 
             }
 
+            imagePath =
+                imagePath.replace(/^\/+/, "");
 
             return new URL(
-                path.replace(/^\/+/, ""),
+                imagePath,
                 document.baseURI
             ).href;
 
         }
 
+
+        /* ================= CREATE POST CARD ================= */
+
+        function createPostCard(post) {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "post-card";
+
+            if (post.image) {
+
+                const image =
+                    document.createElement("img");
+
+                image.className =
+                    "post-image";
+
+                image.src =
+                    postImageURL(post.image);
+
+                image.alt =
+                    post.title || "Fitness Post";
+
+                image.loading =
+                    "lazy";
+
+                image.onerror =
+                    function () {
+
+                        image.style.display =
+                            "none";
+
+                    };
+
+                card.appendChild(image);
+
+            }
+
+            const content =
+                document.createElement("div");
+
+            content.className =
+                "post-content";
+
+            if (post.date) {
+
+                const date =
+                    document.createElement("div");
+
+                date.className =
+                    "post-date";
+
+                date.textContent =
+                    post.date;
+
+                content.appendChild(date);
+
+            }
+
+            const title =
+                document.createElement("h3");
+
+            title.textContent =
+                post.title || "Untitled Post";
+
+            content.appendChild(title);
+
+            if (post.description) {
+
+                const description =
+                    document.createElement("p");
+
+                description.textContent =
+                    post.description;
+
+                content.appendChild(description);
+
+            }
+
+            if (post.link) {
+
+                const link =
+                    document.createElement("a");
+
+                link.className =
+                    "post-read-more";
+
+                link.href =
+                    post.link;
+
+                link.target =
+                    "_blank";
+
+                link.rel =
+                    "noopener noreferrer";
+
+                link.textContent =
+                    "Read More →";
+
+                content.appendChild(link);
+
+            }
+
+            card.appendChild(content);
+
+            return card;
+
+        }
+
+
+        /* ================= LOAD POSTS ================= */
 
         async function loadLatestPosts() {
 
@@ -2288,252 +2350,141 @@
                 postsGrid.innerHTML =
                     '<div class="posts-status">Loading latest posts...</div>';
 
-
                 const response =
                     await fetch(
                         postsAPI,
                         {
-                            cache: "no-store"
+                            method: "GET",
+                            cache: "no-store",
+                            headers: {
+                                "Accept":
+                                    "application/vnd.github+json"
+                            }
                         }
                     );
-
 
                 if (!response.ok) {
 
                     throw new Error(
-                        "GitHub API error: " +
+                        "GitHub API returned " +
                         response.status
                     );
 
                 }
 
-
                 const files =
                     await response.json();
 
+                if (!Array.isArray(files)) {
+
+                    throw new Error(
+                        "Invalid GitHub response."
+                    );
+
+                }
 
                 const markdownFiles =
                     files.filter(function (file) {
 
-                        return file.name
-                            .toLowerCase()
-                            .endsWith(".md");
+                        return (
+                            file.type === "file" &&
+                            typeof file.name === "string" &&
+                            file.name.toLowerCase().endsWith(".md")
+                        );
 
                     });
 
+                if (markdownFiles.length === 0) {
+
+                    postsGrid.innerHTML =
+                        '<div class="posts-status">No posts available yet.</div>';
+
+                    return;
+
+                }
 
                 const posts =
                     await Promise.all(
-
                         markdownFiles.map(
                             async function (file) {
 
                                 const rawURL =
-                                    "https://raw.githubusercontent.com/khalid064/exercise-with-liton/main/content/posts/" +
-                                    encodeURIComponent(
-                                        file.name
-                                    );
-
+                                    "https://raw.githubusercontent.com/" +
+                                    githubOwner +
+                                    "/" +
+                                    githubRepo +
+                                    "/main/" +
+                                    postsPath +
+                                    "/" +
+                                    encodeURIComponent(file.name);
 
                                 const postResponse =
                                     await fetch(
                                         rawURL,
                                         {
+                                            method: "GET",
                                             cache: "no-store"
                                         }
                                     );
 
-
                                 if (!postResponse.ok) {
 
                                     throw new Error(
-                                        "Post file could not be loaded."
+                                        "Could not load " +
+                                        file.name
                                     );
 
                                 }
 
-
                                 const markdown =
                                     await postResponse.text();
 
-
                                 const post =
-                                    parsePost(
-                                        markdown
-                                    );
-
+                                    parsePost(markdown);
 
                                 post.fileName =
                                     file.name;
-
 
                                 return post;
 
                             }
                         )
-
                     );
 
+                posts.sort(
+                    function (a, b) {
 
-                posts.sort(function (a, b) {
+                        const dateA =
+                            new Date(
+                                a.date || 0
+                            ).getTime();
 
-                    return new Date(b.date || 0) -
-                        new Date(a.date || 0);
+                        const dateB =
+                            new Date(
+                                b.date || 0
+                            ).getTime();
 
-                });
+                        return dateB - dateA;
 
+                    }
+                );
 
                 postsGrid.innerHTML = "";
 
+                posts.forEach(
+                    function (post) {
 
-                posts.forEach(function (post) {
+                        const card =
+                            createPostCard(post);
 
-                    const card =
-                        document.createElement("article");
-
-
-                    card.className =
-                        "post-card";
-
-
-                    if (post.image) {
-
-                        const image =
-                            document.createElement("img");
-
-
-                        image.className =
-                            "post-image";
-
-
-                        image.src =
-                            postImageURL(
-                                post.image
-                            );
-
-
-                        image.alt =
-                            post.title ||
-                            "Fitness Post";
-
-
-                        image.loading =
-                            "lazy";
-
-
-                        image.onerror =
-                            function () {
-
-                                image.style.display =
-                                    "none";
-
-                            };
-
-
-                        card.appendChild(
-                            image
-                        );
+                        postsGrid.appendChild(card);
 
                     }
+                );
 
-
-                    const content =
-                        document.createElement("div");
-
-
-                    content.className =
-                        "post-content";
-
-
-                    const date =
-                        document.createElement("div");
-
-
-                    date.className =
-                        "post-date";
-
-
-                    date.textContent =
-                        post.date || "";
-
-
-                    const title =
-                        document.createElement("h3");
-
-
-                    title.textContent =
-                        post.title || "";
-
-
-                    const description =
-                        document.createElement("p");
-
-
-                    description.textContent =
-                        post.description || "";
-
-
-                    content.appendChild(
-                        date
-                    );
-
-
-                    content.appendChild(
-                        title
-                    );
-
-
-                    content.appendChild(
-                        description
-                    );
-
-
-                    if (post.link) {
-
-                        const link =
-                            document.createElement("a");
-
-
-                        link.className =
-                            "post-read-more";
-
-
-                        link.href =
-                            post.link;
-
-
-                        link.target =
-                            "_blank";
-
-
-                        link.rel =
-                            "noopener noreferrer";
-
-
-                        link.textContent =
-                            "Read More →";
-
-
-                        content.appendChild(
-                            link
-                        );
-
-                    }
-
-
-                    card.appendChild(
-                        content
-                    );
-
-
-                    postsGrid.appendChild(
-                        card
-                    );
-
-                });
-
-
-                if (posts.length === 0) {
+                if (
+                    postsGrid.children.length === 0
+                ) {
 
                     postsGrid.innerHTML =
                         '<div class="posts-status">No posts available yet.</div>';
@@ -2541,14 +2492,12 @@
                 }
 
             }
-
             catch (error) {
 
                 console.error(
                     "CMS Posts Error:",
                     error
                 );
-
 
                 postsGrid.innerHTML =
                     '<div class="posts-status">Latest posts could not be loaded right now.</div>';
@@ -2557,6 +2506,8 @@
 
         }
 
+
+        /* ================= START CMS ================= */
 
         loadLatestPosts();
 
