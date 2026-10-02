@@ -1,5 +1,5 @@
 ---
-title: Left-Raght Exercise
+title: Left-Right Exercise
 image: /media/IMG-20261002-WA0006.jpg
 date: 2026-10-02
 description: ব্যায়ামের শেষে শরীরকে রিল্যাক্স করতে ২-৩ মিনিট Left-Right ব্যায়ামটি
