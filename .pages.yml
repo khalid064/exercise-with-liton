@@ -1,0 +1,46 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: posts
+    label: Latest Posts
+    type: collection
+    path: content/posts
+    filename: "{primary}.md"
+
+    fields:
+      - name: title
+        label: Post Title
+        type: string
+        required: true
+
+      - name: image
+        label: Post Image
+        type: image
+        required: true
+
+      - name: date
+        label: Date
+        type: date
+        required: true
+
+      - name: description
+        label: Short Description
+        type: text
+        required: true
+
+      - name: link
+        label: Read More Link
+        type: string
+
+    view:
+      primary: title
+      fields:
+        - title
+        - date
+      sort:
+        - date
+      default:
+        sort: date
+        order: desc
